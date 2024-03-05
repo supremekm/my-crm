@@ -1,0 +1,76 @@
+
+    <main data-title = "{{title}}" class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      
+
+      
+
+      <h2 class="title m-5">Усі компанії</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+            <col width="5%" /> 
+    		<col width="6%" /> 
+    		<col width="7%" /> 
+    		<col width="5%" /> 
+    		<col width="20%" /> 
+    		<col width="5%" /> 
+          <thead>
+            <tr>
+              <th>Дата контакта</th>
+              <th>Організація</th>
+              <th>Країна, область</th>
+              <th>Місто</th>
+              <th>Стан</th>
+              <th>Статус</th>
+            </tr>
+          </thead>
+          <tbody>
+               <tr>
+                <td>02.02.2024</td>
+                <td><a 
+                href="{% url 'core:company' %}"
+                hx-get="{% url 'core:company' %}"
+                hx-target="#main-content"
+                hx-push-url="true"
+                hx-indicator = "#content-loader"
+                hx-on="htmx:beforeRequest: event.detail.target.innerHTML = ''"
+                >ФОП Зануда</a><br> ІПН (1234567890)</td>
+                <td>Україна, Київська область</td>
+                <td>Місто</td>
+                <td>
+                      02.02.2002 15:55 : Зарєстровано 02.02.2002 15:55<br>
+                      02.02.2002 15:55 : Текст коментаря<br>
+                      02.02.2002 15:55 : Текст коментаря 2<br>
+                      
+                </td>
+                <td>Перший контакт</td>
+              </tr>
+              <tr>
+                <td>02.02.2002</td>
+                <td><a href="#">ТОВ Криві Руки</a><br> ІПН (12345117890)</td>
+                <td>Україна, Київська область</td>
+                <td>Місто</td>
+                <td>
+                      02.02.2002 15:55 : Зареєстровано 02.02.2002 15:55<br>
+                      02.02.2002 15:55 : Текст коментаря<br>
+                      02.02.2002 15:55 : Текст коментаря 2<br>
+                      
+                </td>
+                <td>Перший контакт</td>
+              </tr>
+              <tr>
+                <td>02.02.2002</td>
+                <td><a href="#">ПП Крадій</a><br> ІПН (121234567890)</td>
+                <td>Україна, Київська область</td>
+                <td>Місто</td>
+                <td>
+                      02.02.2002 15:55 : Зареєстровано 02.02.2002 15:55<br>
+                      02.02.2002 15:55 : Текст коментаря<br>
+                      02.02.2002 15:55 : Текст коментаря 2<br>
+                      
+                </td>
+                <td>Перший контакт</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>

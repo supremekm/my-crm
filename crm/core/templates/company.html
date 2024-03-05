@@ -1,0 +1,408 @@
+<main data-title = "{{title}}" class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+	<div class="row g-3 mt-3">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-body">
+
+					<input type="hidden" value="agents" name="type" id="type">
+					<div class="row">
+
+						<div class="col-6">
+							<p id="org_id" style="display:none">1293</p>
+							<div class="org_header">Контактні дані</div>
+							<p>
+								<a href="" data-toggle="modal" data-target="#add_contact" id="new_contact">Додати <span data-feather="plus-circle"></span> </a>
+							</p>
+							<div class="org_table">
+								<table class="slide_1_to_m " id="contacts">
+									<thead>
+									</thead>
+									<colgroup>
+										<col width="7%">
+										<col width="5%">
+										<col width="5%">
+										<col width="4%">
+										<col width="1%">
+									</colgroup>
+									<tbody>
+										<tr>
+											<td><b>ФІО</b></td>
+											<td><b>Телефон</b></td>
+											<td><b>Email</b></td>
+											<td><b>Посада</b></td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr id="">
+											<td><span id="contact_name1261">Людмила Мирошник</span></td>
+											<td><span id="contact_phones1261">0500033778 <br></span></td>
+											<td><span id="contact_emails1261"><a href="mailto:as@as.as">as@as.as</a> <br></span></td>
+											<td><span id="contact_dolzhnost1261">Менеджер е-комерс</span></td>
+											<td>
+												<a href="#">Редагувати</a>
+												<a href="#">Видалити</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div>
+								<div class="org_header mt-3">Документи</div>
+								<div class="clear"></div>
+								<div style="min-height: 100px;min-height: 400px; width: 100%; overflow:auto; border: solid 1px black;" class="mt-1">
+									<p>Документы не додані</p>
+									<table width="100%" class="org_table ">
+										<colgroup>
+											<col width="50%">
+											<col width="30%">
+											<col width="20%">
+										</colgroup>
+										<tbody>
+											<tr id="1">
+												<td><a href="#" target="_blank" title="">document.pdf</a></td>
+												<td>02.02.2024</td>
+												<td class="red">
+													<a href="javascript:if(confirm('Подтвердите удаление')) delete())">X Видалити</a>
+												</td>
+											</tr>
+											<tr id="2">
+												<td><a href="#" target="_blank" title="">document.pdf</a></td>
+												<td>02.02.2023</td>
+												<td class="red">
+													<a href="javascript:if(confirm('Подтвердите удаление')) delete()">X Видалити</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								
+									<div class="mt-3 me-2 mb-3">
+										<button type="button" class="btn btn-sm btn-primary float-end">
+											<span class="glyphicon glyphicon-cloud-upload"></span> Додати файл
+										</button>
+										<div class="clear"></div>
+									</div>
+								</div>
+								
+							</div>
+							<div>
+								<div class="org_header mt-3">Рахунки і договори клієнтів</div>
+								<a href="#" style="font-weight:bold">Новий рахунок</a>
+								<a href="#">Усі рахунки</a>
+								<div class="clear"></div>
+								<form action="" method="post" enctype="multipart/form-data" id="rekvizits_form" class="divtop5 form_create_platezh" novalidate="" autocomplete="off">
+									<table width="100%" class="org_table">
+										<tbody>
+											<tr>
+												<td style="width:50%">Постачальник </td>
+												<td>
+													<div class="col-12">
+														<select class="form-select" id="" required>
+															<option>ФОП Зануда Ігор Миколайович</option>
+														</select>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td style="width:50%">Послуга</td>
+												<td>
+													<div class="col-12">
+														<select class="form-select" id="" required>
+															<option>Послуга</option>
+														</select>
+													</div>
+												</td>
+											</tr>
+											<tr class="summ_block">
+												<td style="width:50%">Сума</td>
+												<td><input class="form-control" type="number" value="10000" step="100" required="" id=""> </td>
+											</tr>
+											<tr>
+												<td class="org_td_header">Договір №:</td>
+												<td><input id="create_dog" name="create_dog" type="checkbox"></td>
+											</tr>
+											<tr>
+												<td class="org_td_header">Реквізити </td>
+												<td><a href="" onclick="showRevizits()">+</a></td>
+											</tr>
+											<tr>
+												<td colspan="2">
+													<script>
+														function showRevizits() {
+															event.preventDefault();
+															var image = document.getElementById('rekvizits_block');
+															image.style.display = (image.style.display == 'none') ? 'block' : 'none';
+														}
+													</script>
+													<div class="mb-3" id="rekvizits_block" style="display:none">
+														<table width="100%" align="left">
+															<tbody>
+																<tr>
+																	<td>ИНН</td>
+																	<td>
+																		<input id="id_rekvizit-inn" maxlength="12" name="rekvizit-inn" type="text" value="1513070654">
+																		<p>
+																			<button style="padding: 2px; margin-top: 5px;font-size: 10px;" type="button" class="btn btn-info">Заповнити дані по номеру </button>
+																		</p>
+																		<span id=""></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>ФОП</td>
+																	<td><input type="text" name="rekvizit-kpp" maxlength="12" id="id_rekvizit-kpp"> </td>
+																</tr>
+																<tr>
+																	<td>Назва</td>
+																	<td><input type="text" name="rekvizit-name" maxlength="200" id="id_rekvizit-name"> </td>
+																</tr>
+																<tr>
+																	<td>ІПН</td>
+																	<td><input type="text" name="rekvizit-ogrn" maxlength="200" id="id_rekvizit-ogrn"> </td>
+																</tr>
+																<tr>
+																	<td>Посада</td>
+																	<td><input type="text" name="rekvizit-dolzhnost" maxlength="200" id="id_rekvizit-dolzhnost"> </td>
+																</tr>
+																<tr>
+																	<td>Посада</td>
+																	<td><input type="text" name="rekvizit-dolzhnost_rod" maxlength="200" id="id_rekvizit-dolzhnost_rod"> </td>
+																</tr>
+																<tr>
+																	<td>ФІО в договорі</td>
+																	<td><input type="text" name="rekvizit-director_rod" maxlength="200" id="id_rekvizit-director_rod"> </td>
+																</tr>
+																<tr>
+																	<td>ФІО для підпису</td>
+																	<td><input type="text" name="rekvizit-director" maxlength="200" id="id_rekvizit-director"> </td>
+																</tr>
+																<tr>
+																	<td></td>
+																	<td> </td>
+																</tr>
+																<tr>
+																	<td>На основі чого</td>
+																	<td><input type="text" name="rekvizit-osnovanie" maxlength="200" id="id_rekvizit-osnovanie"> </td>
+																</tr>
+																<tr>
+																	<td>Юридична адреса</td>
+																	<td><input type="text" name="rekvizit-yur_address" maxlength="200" id="id_rekvizit-yur_address"> </td>
+																</tr>
+																<tr>
+																	<td>Почтова адреса</td>
+																	<td><input type="text" name="rekvizit-pocht_address" maxlength="200" id="id_rekvizit-pocht_address"> </td>
+																</tr>
+																<tr>
+																	<td>ЩОСЬ</td>
+																	<td><input type="text" name="rekvizit-okpo" maxlength="200" id="id_rekvizit-okpo"> </td>
+																</tr>
+																<tr>
+																	<td>ЩОСЬ</td>
+																	<td><input type="text" name="rekvizit-bik_bank" maxlength="200" id="id_rekvizit-bik_bank">
+																		<p><button style="padding: 2px; margin-top: 5px;font-size: 10px;" type="button" class="getdataforbik_rekvizits btn btn-info">Заповнити дані</button></p>
+																		<span id="count_request_bic_api"></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>Назва банку</td>
+																	<td><input type="text" name="rekvizit-name_bank" maxlength="200" id="id_rekvizit-name_bank"> </td>
+																</tr>
+																<tr>
+																	<td>Рахунок</td>
+																	<td><input type="text" name="rekvizit-ksc" maxlength="200" id="id_rekvizit-ksc"> </td>
+																</tr>
+																<tr>
+																	<td>Рахунок</td>
+																	<td><input type="text" name="rekvizit-rsc" maxlength="200" id="id_rekvizit-rsc"> </td>
+																</tr>
+																<input type="hidden" value="93" name="platezh_org_id">
+															</tbody>
+														</table>
+														<div class="text-right divtop5">
+															<input class="me-3" type="button" value="Зберегти реквізити">
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td class="org_td_header"></td>
+												<td> </td>
+											</tr>
+										</tbody>
+									</table>
+									<button type="submit">Зберегти</button>
+								</form>
+							</div>
+							<div>
+								<br><br>
+								<div class="org_header divtop5">Чат зі співробітниками</div>
+								<div class="clear"></div>
+								<div style="height: 300px; width: 100%; overflow:auto; border: solid 1px black; font-size: 12px;">
+								</div>
+								<p class="mt-2"><input type="button" value="Надіслати телеграму"></p>
+								<div class="clear"></div>
+								<br>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="col-6">
+							<form action="" method="post" enctype="multipart/form-data">
+								<table width="100%" class="org_table">
+									<colgroup>
+										<col width="30%">
+										<col width="70%">
+									</colgroup>
+									<tbody>
+										<tr>
+											<td class="org_header" colspan="2">Розширена інформація по компанії</td>
+										</tr>
+										<tr>
+											<th>Компанія:</th>
+											<td>ФОП Ткачук</td>
+										</tr>
+										<tr>
+											<th>Дата створення аккаунта в CRM:</th>
+											<td>02.02.2024</td>
+										</tr>
+										<tr>
+											<th>КВЕД / вид діяльності</th>
+											<td>Комерційне спілкування з клієнтами<small></small></td>
+										</tr>
+										<tr>
+											<th>КВЕД ПІДРОЗДІЛ</th>
+											<td>38 - збір інформації про клієнта<small></small></td>
+										</tr>
+										<tr>
+											<th>КВЕД</th>
+											<td>38.1 - Збір інформації<small></small></td>
+										</tr>
+
+										<tr>
+											<th>Країна:</th>
+											<td>Україна</td>
+										</tr>
+										<tr>
+											<th>Регіон:</th>
+											<td>Київська область</td>
+										</tr>
+										<tr>
+											<th>Місто:</th>
+											<td>Київ
+
+											</td>
+										</tr>
+										<tr>
+											<th>Адреса:</th>
+											<td>14556, Київська область, Київ, вулиця Велика Ашанівська, 17</td>
+										</tr>
+
+										<tr>
+											<th></th>
+											<td> </td>
+										</tr>
+										<tr>
+											<td class="org_td_header">ІПН:</td>
+											<td>9014010202
+
+											</td>
+										</tr>
+										<tr>
+											<th>ФОП id:</th>
+											<td>231400202</td>
+										</tr>
+
+									</tbody>
+								</table>
+								<table width="100%">
+									<colgroup>
+										<col width="30%">
+										<col width="70%">
+
+									</colgroup>
+									<tbody>
+
+										<tr>
+											<td class="org_header" colspan="2">Действие</td>
+										</tr>
+										<tr>
+											<th>Менеджер:</th>
+											<td> <a href="#">Мірошник Людмила</a> </td>
+										</tr>
+
+										<tr>
+											<th>Історія картки:</th>
+											<td>
+
+											</td>
+										</tr>
+
+										<tr>
+											<td class="org_td_header" colspan="2">Статус:
+
+											</td>
+										</tr>
+										<tr id="1293">
+											<td colspan="2">
+												<div style="height: 300px; width: 100%; overflow:auto; border: solid 1px black; font-size: 12px;">
+													<span id="">
+
+														<b>02.02.2024 15:55 :</b> Зареєстровано 02.02.2024 15:55<br>
+													</span>
+												</div>
+
+												<br>
+												<p class="show_comment_block"><input type="button" value="Додати коментар"></p>
+
+												<div class="comment_block" style="display:none">
+													<div id="comment_form1293"><input type="hidden" name="csrfmiddlewaretoken" value="0hBlVbSLRPboEGdeg2J1MMGA8kGmBMb6YaSgPGOtp3ixs0xEbRAgt10djOLOGMyj">
+														<textarea name="new_comment" id="new_comment1293" rows="5"></textarea>
+														<input type="button" class="save_comment" value="Сохранить">
+													</div>
+												</div>
+
+											</td>
+										</tr>
+
+										<tr>
+											<th class="" colspan="2"></th>
+										</tr>
+										<tr>
+											<td colspan="2"></td>
+										</tr>
+										<tr>
+											<th class="">Статус</th>
+											<td>
+												<div><select name="" class="">
+														<option class="" value=""></option>
+														<option value="">---------</option>
+
+														<option value="1" selected="">Низький</option>
+
+														<option value="2">Середній</option>
+
+														<option value="3">Високий</option>
+
+														<option value="4">Розрахован</option>
+
+														<option value="5">Відмова</option>
+
+													</select>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th>Наступний контакт:</th>
+											<td>
+												<div class="">
+													<input type="text" value="02.02.2002 15:55:14">
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<input type="submit" class="btn btn-sm btn-primary mb-2" value="Зберегти">
+							</form>
+						</div>
+						<hr>
+					</div>
+				</div>
+			</div>
+		</div>
+</main>
